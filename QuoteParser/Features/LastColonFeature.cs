@@ -9,10 +9,10 @@ namespace QuoteParser.Features
         protected override Regex GetRegex()
         {
             // Full regex for testing needs
-            //var regex = "(.*[\\s\\p{C}\\p{Z}>])?.*:([\\p{C}\\p{Z}\\s]*)?";
+            //var regex = "(.*[\\s\\p{C}\\p{Z}>])?.*:[\\p{C}\\p{Z}\\s]*";
 
             // Regex for matching colon(:) in the end of the line.
-            return new Regex($"{_startWhitespaceOptional}.*:({_whitespace}*)?");
+            return new Regex($"{_startWhitespaceOptional}.*:{_whitespace}*$");
         }
     }
 }
