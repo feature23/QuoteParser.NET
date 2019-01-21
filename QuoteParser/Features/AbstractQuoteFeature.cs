@@ -6,7 +6,7 @@ namespace QuoteParser.Features
     {
         protected const string _whitespace = "[\\p{C}\\p{Z}\\s]";
         protected const string _startWhitespaceOptional = "(.*[\\s\\p{C}\\p{Z}>])?";
-        protected const string _endWhitespaceOptional = "(\\p{C}\\p{Z}\\s].*)?";
+        protected const string _endWhitespaceOptional = "([\\p{C}\\p{Z}\\s].*)?";
         protected const string _startBracketsOptional = "\\p{C}*[\\.,\\{\\[<\\*\\(:\"'`\\|\\\\/~]?\\p{C}*";
         protected const string _endBracketsOptional = "\\p{C}*[\\.,}\\]>\\*\\):\"'`\\|\\\\/~;]?\\p{C}*";
 

@@ -15,7 +15,7 @@ namespace QuoteParser.Features
 
             // This regex matches the colon after any word except the last one with optional
             // whitespace before the colon and obligatory whitespace after the colon.
-            return new Regex($"[\\s\\p{{C}}\\p{{Z}}>]*\\S+{_whitespace}*:{_whitespace}+\\S+.*");
+            return new Regex($"^[\\s\\p{{C}}\\p{{Z}}>]*\\S+{_whitespace}*:{_whitespace}+\\S+.*");
         }
 
         public static bool CheckMiddleColonSuggestion(int startIdx, int endIdx, IList<string> lines,
