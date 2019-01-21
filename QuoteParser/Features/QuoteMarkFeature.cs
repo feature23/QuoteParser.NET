@@ -23,7 +23,7 @@ namespace QuoteParser.Features
         protected override Regex GetRegex()
         {
             // Regex for matching greater-than(>) symbol in the beginning of the line.
-            return new Regex($"{_whitespace}*>.*");
+            return new Regex($"^{_whitespace}*>.*");
         }
 
         public IList<QuoteMarkMatchingResult> MatchLines(IList<string> lines)

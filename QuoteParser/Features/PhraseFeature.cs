@@ -33,7 +33,7 @@ namespace QuoteParser.Features
 
         public PhraseFeature(IEnumerable<string> keyPhrases)
         {
-            _commonRegex = keyPhrases.JoinToString(prefix: "(", separator: ")|(", postfix: ")");
+            _commonRegex = keyPhrases.JoinToString(prefix: "^((", separator: ")|(", postfix: "))$");
         }
 
         public override string Name => "PHRASE";
