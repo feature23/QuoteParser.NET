@@ -18,7 +18,7 @@ namespace QuoteParser.Tests
         [InlineData(8863, 33, 33)]
         [InlineData(9757, 2, 4, "On Fri, May 15, 2015 at 5:01 PM, text text <", "text.text@text.com> wrote:")]
         [InlineData(17382, 26, 27, "##- Please type your reply above this line -##")]
-        [InlineData(22912, 4, 5, "INFO   | jvm 1    | 2016/07/05 16:27:17 | text:   text: ")]
+        [InlineData(22912, 4, 5, "INFO\u00a0\u00a0 | jvm 1\u00a0\u00a0\u00a0 | 2016/07/05 16:27:17 | text:\u00a0\u00a0 text: ")]
         public void TestEmail(int emailNum, int startIndex, int endIndex, params string[] lines)
         {
             var text = lines.ToList();
