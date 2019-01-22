@@ -8,7 +8,14 @@ namespace QuoteParser.Tests
         public RecTests()
             : base("recursive")
         {
+        }
 
+        protected override QuoteParser CreateQuoteParser()
+        {
+            return new QuoteParser.Builder()
+                .DeleteQuoteMarks(true)
+                .Recursive(true)
+                .Build();
         }
 
         [Fact]
@@ -62,7 +69,7 @@ namespace QuoteParser.Tests
                 endIndex: 4,
                 text: new List<string>
                 {
-                    "From: \"text text(text)\" <text.text@text.com>",
+                    "From: \"text text (text)\" <text.text@text.com>",
                     "Sent: Friday, February 13, 2015, 6:44:58 PM",
                     "To: ",
                     "Subject: [text] Update: [text-text text] text-123456"
