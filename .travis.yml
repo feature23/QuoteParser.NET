@@ -1,0 +1,8 @@
+language: csharp
+mono: none
+sudo: required
+dotnet: 2.2
+script:
+    - dotnet restore
+    - dotnet build
+    - dotnet test
