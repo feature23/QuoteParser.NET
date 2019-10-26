@@ -2,20 +2,15 @@
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
-    <Authors>Jeff Camera</Authors>
+    <Authors>feature[23]</Authors>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-    <Description>A .NET Standard port of JetBrains' email-parser library, for parsing quoted text from email messages.
-
-Created by feature[23]. QuoteParserLite fork created to drop dependencies.</Description>
+    <Description>A .NET Standard port of JetBrains' email-parser library, for parsing quoted text from email messages.</Description>
     <PackageLicenseExpression>Apache-2.0</PackageLicenseExpression>
-    <PackageProjectUrl>https://github.com/reallyreadit/QuoteParser.NET</PackageProjectUrl>
-    <PackageIconUrl></PackageIconUrl>
+    <PackageProjectUrl>https://github.com/feature23/QuoteParser.NET</PackageProjectUrl>
+    <PackageIconUrl>https://raw.githubusercontent.com/feature23/QuoteParser.NET/master/logo.png</PackageIconUrl>
     <RepositoryUrl></RepositoryUrl>
     <PackageTags>quoteparser email-parser email parse parsing quote reply</PackageTags>
-    <PackageId>QuoteParserLite</PackageId>
-    <Company>reallyread.it, inc.</Company>
-    <Product>QuoteParserLite</Product>
-    <Version>1.1.0</Version>
+    <Version>2.0.0</Version>
   </PropertyGroup>
 
 </Project>
