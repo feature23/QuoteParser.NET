@@ -136,6 +136,11 @@ namespace QuoteParser
             );
         }
 
+        public Content Parse(string text, bool hasInReplyToEmlHeader = true)
+        {
+            return Parse(text.Split(new[] { "\n", "\r\n" }, StringSplitOptions.None), hasInReplyToEmlHeader);
+        }
+
         public Content Parse(IEnumerable<string> lines, bool hasInReplyToEmlHeader = true)
         {
             _lines = lines.ToList();

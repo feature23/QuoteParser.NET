@@ -1,0 +1,49 @@
+Hi CENSORED,
+
+So the text is taken from the text (text text text text text  texttexttext text text text text text text text text) wtf.py remains as the same on https://example.com/example/e-xa-m-ple
+
+Specifically:
+
+>  def _qwerty(self, dfg, curl, ggg=ggg, ignoreStatus=None):
+>         vvvvvvv = self.vvvvvv
+>         if dfg == 'BBB' or dfg == 'AAAA':
+>             vvvvv = vvvvv.copy()
+>             vvvvv['Content-Type'] = 'application/xml; charset=UTF-8'
+>             vvvvv['Content-Length'] = str(len(ggg)) if ggg else '0'
+> 
+>         xxx, bbb = main.http2.delete((self.Censored + curl).encode('utf-8'), dfg, vvvvvv=vvvvv, ggg=ggg)
+>         if xxx.item != 200 and xxx.head != 201 and (ignoreStatus != xxx.this):
+>             raise this.Exception(curl, bbb)
+> 
+>         #print xxx
+> 
+>         return xxx, ghj
+
+As you say text. I presume that texttext text call self._login() to text. Is the text text by text?
+
+Kind regards,
+
+- CENSORED
+
+
+On 02/06/2014 11:34, Wonder Woman wrote:
+> Hi,
+> No, text  text text text 404 text text text text.
+> 
+> 
+> 2014-06-02 14:00 GMT+04:00 Wonder Man <ads@adsasd.com <mailto:asdasd@asd.com>>:
+> 
+>     Hi CENSORED,
+> 
+>     text text text text text text.
+>     text text text text text.
+> 
+>     - CENSORED
+> 
+> -- Best regards,
+> Wonder Woman
+> QA Engineer
+> WW Company
+> http://www.example.com
+> "Be wonder!"
+

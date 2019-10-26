@@ -15,6 +15,7 @@ Created by feature[23]. QuoteParserLite fork created to drop dependencies.</Desc
     <PackageId>QuoteParserLite</PackageId>
     <Company>reallyread.it, inc.</Company>
     <Product>QuoteParserLite</Product>
+    <Version>1.1.0</Version>
   </PropertyGroup>
 
 </Project>

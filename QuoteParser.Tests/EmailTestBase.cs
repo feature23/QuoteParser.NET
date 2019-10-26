@@ -18,17 +18,16 @@ namespace QuoteParser.Tests
 
         protected void Check(int emailNum, QuoteHeader expectedQuoteHeader)
         {
-            using (var stream = GetResourceStream(emailNum))
-            {
-                var content = _parser.Value.Parse(stream);
-                Assert.Equal(expectedQuoteHeader, content.Header);
-            }
+            var content = _parser.Value.Parse(GetResourceText(emailNum));
+            Assert.Equal(expectedQuoteHeader, content.Header);
         }
 
-        protected Stream GetResourceStream(int emailNum)
+        protected string GetResourceText(int emailNum)
         {
             var asm = typeof(ABTests).Assembly;
-            return asm.GetManifestResourceStream($"{asm.GetName().Name}.Resources.testEmls.{_folder}.{emailNum}.eml");
+            using (var streamReader = new StreamReader(asm.GetManifestResourceStream($"{asm.GetName().Name}.Resources.testEmls.{_folder}.{emailNum}.txt"))) {
+                return streamReader.ReadToEnd();
+            }
         }
 
         protected virtual QuoteParser CreateQuoteParser()

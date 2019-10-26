@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.IO;
 using Xunit;
 
 namespace QuoteParser.Tests
@@ -41,13 +42,10 @@ namespace QuoteParser.Tests
                     "In reply to:"
                 }
             );
-
-            using (var stream = GetResourceStream(emailNum))
-            {
-                var content = Parser.Parse(stream);
-                Assert.Equal(expectedQuoteHeader, content.Header);
-                Assert.Equal(expectedInnerQuoteHeader, content.Quote?.Header);
-            }
+            
+            var content = Parser.Parse(GetResourceText(emailNum));
+            Assert.Equal(expectedQuoteHeader, content.Header);
+            Assert.Equal(expectedInnerQuoteHeader, content.Quote?.Header);
         }
 
         [Fact]
@@ -84,14 +82,11 @@ namespace QuoteParser.Tests
                     "##- Please type your reply above this line -##  "
                 }
             );
-
-            using (var stream = GetResourceStream(emailNum))
-            {
-                var content = Parser.Parse(stream);
-                Assert.Equal(expectedQuoteHeader1, content.Header);
-                Assert.Equal(expectedQuoteHeader2, content.Quote?.Header);
-                Assert.Equal(expectedQuoteHeader3, content.Quote?.Quote?.Header);
-            }
+            
+            var content = Parser.Parse(GetResourceText(emailNum));
+            Assert.Equal(expectedQuoteHeader1, content.Header);
+            Assert.Equal(expectedQuoteHeader2, content.Quote?.Header);
+            Assert.Equal(expectedQuoteHeader3, content.Quote?.Quote?.Header);
         }
     }
 }
