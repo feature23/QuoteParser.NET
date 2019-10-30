@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using QuoteParser.Features;
-using static QuoteParser.Parse;
 using static QuoteParser.Features.QuoteMarkFeature;
 using KeyPhrasesClass = QuoteParser.Features.KeyPhrases;
 
@@ -137,11 +136,9 @@ namespace QuoteParser
             );
         }
 
-        public Content Parse(Stream emlFile)
+        public Content Parse(string text, bool hasInReplyToEmlHeader = true)
         {
-            var msg = GetMimeMessage(emlFile);
-            string emailText = GetEmailText(msg);
-            return Parse(emailText.Lines(), ContainInReplyToHeader(msg));
+            return Parse(text.Split(new[] { "\n", "\r\n" }, StringSplitOptions.None), hasInReplyToEmlHeader);
         }
 
         public Content Parse(IEnumerable<string> lines, bool hasInReplyToEmlHeader = true)

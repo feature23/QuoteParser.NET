@@ -1,4 +1,6 @@
-﻿using System;
+﻿using MimeKit;
+using MimeKit.Text;
+using System;
 using System.IO;
 using Xunit;
 
@@ -18,17 +20,18 @@ namespace QuoteParser.Tests
 
         protected void Check(int emailNum, QuoteHeader expectedQuoteHeader)
         {
-            using (var stream = GetResourceStream(emailNum))
-            {
-                var content = _parser.Value.Parse(stream);
-                Assert.Equal(expectedQuoteHeader, content.Header);
-            }
+            var content = _parser.Value.Parse(GetResourceTextBody(emailNum));
+            Assert.Equal(expectedQuoteHeader, content.Header);
         }
 
-        protected Stream GetResourceStream(int emailNum)
+        protected string GetResourceTextBody(int emailNum)
         {
             var asm = typeof(ABTests).Assembly;
-            return asm.GetManifestResourceStream($"{asm.GetName().Name}.Resources.testEmls.{_folder}.{emailNum}.eml");
+            using (var stream = asm.GetManifestResourceStream($"{asm.GetName().Name}.Resources.testEmls.{_folder}.{emailNum}.eml")) {
+                return MimeMessage
+                    .Load(stream)
+                    .GetTextBody(TextFormat.Plain);
+            }
         }
 
         protected virtual QuoteParser CreateQuoteParser()
