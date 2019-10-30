@@ -43,7 +43,7 @@ namespace QuoteParser.Tests
                 }
             );
             
-            var content = Parser.Parse(GetResourceText(emailNum));
+            var content = Parser.Parse(GetResourceTextBody(emailNum));
             Assert.Equal(expectedQuoteHeader, content.Header);
             Assert.Equal(expectedInnerQuoteHeader, content.Quote?.Header);
         }
@@ -83,7 +83,7 @@ namespace QuoteParser.Tests
                 }
             );
             
-            var content = Parser.Parse(GetResourceText(emailNum));
+            var content = Parser.Parse(GetResourceTextBody(emailNum));
             Assert.Equal(expectedQuoteHeader1, content.Header);
             Assert.Equal(expectedQuoteHeader2, content.Quote?.Header);
             Assert.Equal(expectedQuoteHeader3, content.Quote?.Quote?.Header);
